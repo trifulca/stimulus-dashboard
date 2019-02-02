@@ -1,3 +1,4 @@
+import os
 from sanic import Sanic
 from templates import render
 
@@ -9,4 +10,5 @@ async def hello_world(request):
     return render("home.html", nombre="pepe")
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8001, debug=True)
+    port = int(os.environ['PORT'])
+    app.run(host="0.0.0.0", port=port, debug=True)
