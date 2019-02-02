@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="/static/tachyons.min.css">
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+
+    <script>
+      (() => {
+        const application = Stimulus.Application.start()
+
+        application.register("hello", class extends Stimulus.Controller {
+          static get targets() {
+            return [ "name" ]
+          }
+
+        })
+      })()
+
+    </script>
+
+  </head>
+  <body class="pa3 sans-serif">
+
+    <p>Hola pepe, ¿como estás?</p>
+
+    <div data-controller="hello">
+      <input type="text">
+      <button>Greet</button>
+    </div>
+
+  </body>
+</html>
